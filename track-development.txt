@@ -1,0 +1,43 @@
+Medusa is an open source ecommerce tool
+
+We are trying to create a marketplace
+
+Step 1 - Extend the user and store entities to have a relation.. 
+Step 2 - Register a middleware that runs and gets the current logged in user for the medusa admin.
+Step 3 - Extend Product entity to establish a relation with store.
+Step 4 - Extend orders relationship with stores and other orders (Parent order and child orders).
+
+
+NB; Before deploying, search all console.logs and remove
+
+
+Things to setup with checkout account
+- sendgrid
+- google signup
+- cloudinary
+
+{}
+
+
+NB; The phone verification route only accepts +234 at the moment (Only Nigerian mobile numbers)
+
+# Todo
+- Setup email messaging and send email to registered user and created store in its sunscriber module
+- Change the bus event from local to redis on production
+- Seperate the cart for single store and globally... (use the product_id and store id.. create a fetch for this or if you can use the medusa client using the query property)
+- In the admin/cart/share route replace direct use of shareTagRepo to create *** with a service..
+
+
+
+Subscribers to work
+Cart.updated (Prolly)
+Cart.created (Prolly)
+User.created
+Store.created
+
+
+The files below added cart.shipping_methods as conditionals to perform some executions which I just commented out for the main time.. Go back and work on them
+modules/checkout/components/payment-button/index.tsx
+modules/checkout/components/review/index.tsx
+
+
